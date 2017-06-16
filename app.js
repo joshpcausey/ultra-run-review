@@ -8,16 +8,17 @@ var express     = require("express"),
     methodOverride = require("method-override"),
     Marathon  = require("./models/marathon"),
     Comment     = require("./models/comment"),
-    User        = require("./models/user")
+    User        = require("./models/user");
     // seedDB      = require("./seeds")
     
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
     marathonRoutes = require("./routes/marathons"),
-    indexRoutes      = require("./routes/index")
- 
-// var url = process.env.DATABASEURL || "mongodb://localhost/ultra-run-review";
-mongoose.connect("mongodb://admin:toorroot@ds127842.mlab.com:27842/ultrarunreview");
+    indexRoutes      = require("./routes/index");
+
+mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb://admin:toorroot@ds127842.mlab.com:27842/ultrarunreview");
+
 
 
 app.use(bodyParser.urlencoded({extended: true}));
