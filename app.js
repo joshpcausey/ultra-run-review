@@ -15,8 +15,10 @@ var express     = require("express"),
 var commentRoutes    = require("./routes/comments"),
     marathonRoutes = require("./routes/marathons"),
     indexRoutes      = require("./routes/index");
+ 
+var url = process.env.DATABASEURL || "mongodb://localhost/ultra-run-review";
+mongoose.connect(url);
 
-mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
