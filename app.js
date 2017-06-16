@@ -17,9 +17,6 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index");
 
 mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://admin:toorroot@ds127842.mlab.com:27842/ultrarunreview");
-
-
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
