@@ -14,7 +14,7 @@ router.get("/new",middleware.isLoggedIn, function(req, res){
         } else {
              res.render("comments/new", {marathon: marathon});
         }
-    })
+    });
 });
 
 //Comments Create
